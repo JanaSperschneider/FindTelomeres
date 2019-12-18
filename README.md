@@ -5,7 +5,7 @@ This is a tool for finding telomeric repeats (TTAGGG/CCCTAA) in FASTA files.
 #### How does it do that?
 It takes a FASTA file as input and goes through the sequences in it one by one. It ignores N's (unknown bases) at the start and the end of each sequence.
 
-For each sequence, it will look at the first (last) 50 nts and assess how much of this sequence is covered by telomeric repeats. This is deliberately flexible to allow for sequencing errors and sequence/length variation of telomeric motifs. More specifically, if >= 50% of the first or last 50 nts are covered by telomeric repeats, it will call a telomere.  
+For each sequence, it will look at the first (last) 50 nts and assess how much of this sequence is covered by telomeric repeats. This is deliberately flexible to allow for sequencing errors and sequence/length variation of telomeric motifs. More specifically, if >= 50% of the first (last) 50 nts are covered by telomeric repeats, it will call a telomere.  
 
 The default settings of 50% (-c/--cutoff) and 50 nts (-w/--window) seem to work well for most use cases. Some telomeres can be very short or vary from the canonical TTAGGG/CCCTAA motif. With these parameters they will likely be recovered. However, the parameters can be set differently.
 
