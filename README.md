@@ -12,9 +12,9 @@ The default settings of 50% (-c/--cutoff) and 50 nts (-w/--window) seem to work 
 The telomeric motifs that are used in the search are these regular expressions: C{2,4}T{1,2}A{1,3} and T{1,3}A{1,2}G{2,4}. They can be changed by editing one line in the script to suit other needs.
 
 #### Installation and usage
-It is written in Python 3 and requires BioPython.
+The script is written in Python 3 and requires BioPython (https://biopython.org/wiki/Download).
 
-Just run the script as follows:
+After installing Python 3 and BioPython, run the script as follows:
 
 ```
 usage: FindTelomeres.py FASTA_FILE
