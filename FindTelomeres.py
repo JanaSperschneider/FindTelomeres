@@ -91,14 +91,17 @@ print('##########')
 print()
 #--------------------------------------------
 for header, sequence in sequences:
-    forward, reverse, start_of_sequence_withoutNs, end_of_sequence_withoutNs = findTelomere(sequence)
+    if sequence.count('N') == len(sequence):
+        pass
+    else:
+        forward, reverse, start_of_sequence_withoutNs, end_of_sequence_withoutNs = findTelomere(sequence)
 
-    if forward == True:
-        print(header, '\t', 'Forward (start of sequence)', '\t', sequence[start_of_sequence_withoutNs:start_of_sequence_withoutNs+WINDOW])
-        number_forward += 1
-    if reverse == True:        
-        print(header, '\t', 'Reverse (end of sequence)', '\t', sequence[(end_of_sequence_withoutNs-WINDOW):end_of_sequence_withoutNs])
-        number_reverse += 1
+        if forward == True:
+            print(header, '\t', 'Forward (start of sequence)', '\t', sequence[start_of_sequence_withoutNs:start_of_sequence_withoutNs+WINDOW])
+            number_forward += 1
+        if reverse == True:        
+            print(header, '\t', 'Reverse (end of sequence)', '\t', sequence[(end_of_sequence_withoutNs-WINDOW):end_of_sequence_withoutNs])
+            number_reverse += 1
 
 print(("\nTelomeres found: {} ({} forward, {} reverse)".format(str(number_forward+number_reverse),number_forward,number_reverse)))
 #--------------------------------------------
